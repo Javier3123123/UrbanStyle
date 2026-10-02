@@ -1,0 +1,610 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    color-scheme: light;
+    --ink: #182622;
+    --muted: #68746f;
+    --line: #d8dfda;
+    --paper: #f4f5f0;
+    --white: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-synthesis: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--ink);
+    background: var(--paper);
+}
+
+.topbar {
+    height: 76px;
+    padding: 0 6.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #000000;
+}
+
+.wordmark {
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-decoration: none;
+}
+
+.wordmark span {
+    color: #76817b;
+    font-weight: 500;
+}
+
+.text-button {
+    padding: 9px 0;
+    border: 0;
+    color: var(--ink);
+    background: transparent;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.text-button:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.login-layout {
+    width: min(1120px, 87vw);
+    min-height: calc(100vh - 76px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-intro {
+    position: relative;
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10%;
+    border: 1px solid #000000;
+}
+
+.eyebrow {
+    font: 500 11px 'DM Mono', monospace;
+    letter-spacing: 0;
+}
+
+.login-intro h1 {
+    margin: 0;
+    font-size: clamp(50px, 7vw, 86px);
+    line-height: .99;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.intro-copy {
+    max-width: 320px;
+    margin-top: 26px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.intro-index {
+    bottom: 0;
+    color: var(--muted);
+    font: 11px 'DM Mono', monospace;
+}
+
+.login-panel {
+    padding: 42px;
+    background: var(--white);
+    border: 1px solid #000000;
+}
+
+.login-panel h2 {
+    margin: 0 0 30px;
+    font-size: 27px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.login-panel form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-panel label {
+    margin: 0 0 9px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.login-panel input {
+    width: 100%;
+    height: 49px;
+    margin-bottom: 22px;
+    padding: 0 13px;
+    border: 1px solid #000000;
+    color: var(--ink);
+    background: var(--white);
+    font: inherit;
+    font-size: 13px;
+}
+
+.login-panel input:focus {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+}
+
+.primary-button {
+    display: flex;
+    height: 51px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+    padding: 0 16px;
+    border: 0;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.primary-button:hover {
+    background: #b1b1b1;
+}
+
+.demo-note {
+    margin: 22px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.form-error {
+    margin: 12px 0 0;
+    color: #a83131;
+    font-size: 12px;
+}
+
+.dashboard {
+    width: min(1020px, 87vw);
+    margin: 0 auto;
+    padding: 58px 0 70px;
+    animation: arrive .45s ease both;
+}
+
+.welcome-band {
+    padding: 30px 36px 32px;
+    color: #000000;
+    border: 1.5px solid #000000;
+}
+
+.welcome-band .eyebrow {
+    color: #000000;
+}
+
+.welcome-band h1 {
+    margin: 0;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.welcome-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin: 15px 0 0;
+    color: #303030;
+    font-size: 12px;
+}
+
+.profile-section {
+    margin-top: 38px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #000000;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 7px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 0;
+}   
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0;
+}
+
+.profile-item {
+    min-width: 0;
+    padding: 20px 16px 18px 0;
+}
+
+.section-heading {
+    border-bottom: 1px solid #000000;
+}
+
+.profile-item dt {
+    margin-bottom: 9px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.profile-item dd {
+    overflow-wrap: anywhere;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.purchase-section {
+    margin-top: 42px;
+}
+
+.purchase-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+    gap: 48px;
+    padding-top: 12px;
+}
+
+.catalog-item {
+    min-height: 62px;
+    display: grid;
+    grid-template-columns: 20px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+}
+
+.product-checkbox {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--ink);
+}
+
+.product-name,
+.product-price {
+    font-size: 13px;
+}
+
+.product-price {
+    font-weight: 700;
+}
+
+.coupon-field {
+    display: grid;
+    grid-template-columns: 1fr minmax(90px, 130px);
+    align-items: center;
+    gap: 16px;
+    margin-top: 26px;
+}
+
+.coupon-field label {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.coupon-field input {
+    width: 100%;
+    height: 42px;
+    padding: 0 11px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+}
+
+.coupon-field input:focus {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+}
+
+.order-summary {
+    padding: 6px 0 0;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 11px 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.summary-line strong {
+    color: var(--ink);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.summary-total {
+    margin-top: 5px;
+    padding-top: 16px;
+    border-top: 1px solid var(--ink);
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.summary-total strong {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.order-number {
+    margin: 23px 0 12px;
+    color: var(--muted);
+    font: 11px 'DM Mono', monospace;
+}
+
+.order-number strong {
+    color: var(--ink);
+}
+
+.order-button {
+    width: 100%;
+    background: #e2e2e2;
+}
+
+.order-button:disabled {
+    background: #e5e7e0;
+    color: #8a918c;
+    cursor: not-allowed;
+}
+
+.order-confirmation {
+    margin: 12px 0 0;
+    color: #315b3c;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.flash-section {
+    display: grid;
+    grid-template-columns: 1fr minmax(250px, .8fr);
+    align-items: center;
+    gap: 32px;
+    margin-top: 54px;
+    padding: 28px 30px;
+    color: #000;
+    border: 1px solid black;
+}
+
+.flash-section .eyebrow,
+.flash-section p {
+    color: #7a7a7a;
+}
+
+.flash-section h2 {
+    margin: 6px 0 8px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.flash-section p {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+.flash-control {
+    text-align: right;
+}
+
+.flash-countdown {
+    margin: 0 0 10px !important;
+    font: 500 26px 'DM Mono', monospace !important;
+}
+
+.flash-button {
+    width: 100%;
+    background: #e2e2e2;
+    color: var(--ink);
+}
+
+.flash-button:disabled {
+    background: #e5e7e0;
+    color: #68746f;
+    cursor: not-allowed;
+}
+
+.flash-status {
+    min-height: 18px;
+    margin-top: 9px !important;
+    font-size: 11px !important;
+}
+
+.reviews-section {
+    margin-top: 48px;
+}
+
+.review-form {
+    display: grid;
+    gap: 12px;
+    max-width: 680px;
+    padding: 22px 0;
+}
+
+.review-form label {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.review-form textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+    padding: 12px;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    background: var(--white);
+    font: inherit;
+    font-size: 13px;
+}
+
+.review-form textarea:focus {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+}
+
+.review-button {
+    width: min(100%, 280px);
+    background: #e2e2e2;
+}
+
+.review-status {
+    min-height: 18px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.review-list {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.review-item {
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+}
+
+.review-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 20px;
+    font-size: 12px;
+}
+
+.review-meta time {
+    color: var(--muted);
+    font: 11px 'DM Mono', monospace;
+}
+
+.review-item p {
+    margin: 10px 0 0;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.mono {
+    font: 12px 'DM Mono', monospace !important;
+}
+
+.noscript {
+    padding: 24px;
+    text-align: center;
+}
+
+@keyframes arrive {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+    .topbar {
+        height: 64px;
+        padding: 0 6vw;
+    }
+
+    .login-layout {
+        min-height: auto;
+        padding: 48px 0;
+    }
+
+    .login-intro {
+        min-height: 250px;
+    }
+
+    .login-intro h1 {
+        font-size: 58px;
+    }
+
+    .intro-index {
+        bottom: -22px;
+    }
+
+    .login-panel {
+        padding: 28px 23px;
+    }
+
+    .dashboard {
+        padding-top: 30px;
+    }
+
+    .welcome-band {
+        padding: 25px 23px;
+    }
+
+    .profile-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .purchase-layout {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    .flash-section {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 24px;
+    }
+
+    .flash-control {
+        text-align: left;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}

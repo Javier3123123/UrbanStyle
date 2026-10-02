@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="analytics-id" content="">
+    <title>Urban Style | Inicio</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/business.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="wordmark" href="index.html" aria-label="Urban Style, inicio">URBAN<span>STYLE</span></a>
+        <button class="text-button" id="logout-button" type="button">Cerrar sesión</button>
+    </header>
+
+    <main class="dashboard" id="dashboard" hidden>
+        <section class="welcome-band">
+            <p class="eyebrow">ESPACIO DE CLIENTE</p>
+            <h1>Hola, <span id="user-name">Cliente</span></h1>
+            <p class="welcome-meta"><span id="user-role">Cliente</span><span id="current-date"></span></p>
+        </section>
+
+        <section class="profile-section" aria-labelledby="profile-heading">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">TU CUENTA</p>
+                    <h2 id="profile-heading">Perfil y diagnóstico</h2>
+                </div>
+            </div>
+            <dl class="profile-grid">
+                <div class="profile-item"><dt>Correo</dt><dd id="email"></dd></div>
+                <div class="profile-item"><dt>Usuario del correo</dt><dd id="email-user"></dd></div>
+                <div class="profile-item"><dt>Dominio</dt><dd id="email-domain"></dd></div>
+                <div class="profile-item"><dt>ID de cliente</dt><dd id="customer-id"></dd></div>
+                <div class="profile-item"><dt>Apodo</dt><dd id="nickname"></dd></div>
+                <div class="profile-item"><dt>Membresía</dt><dd id="membership"></dd></div>
+                <div class="profile-item"><dt>Prendas de regalo</dt><dd id="gift-clothes"></dd></div>
+                <div class="profile-item"><dt>Idioma del navegador</dt><dd id="browser-language"></dd></div>
+                <div class="profile-item"><dt>Conexión</dt><dd id="internet-status"></dd></div>
+                <div class="profile-item"><dt>ID de sesión</dt><dd class="mono" id="session-id"></dd></div>
+            </dl>
+        </section>
+
+        <section class="purchase-section" aria-labelledby="purchase-heading">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">CATÁLOGO</p>
+                    <h2 id="purchase-heading">Tu selección</h2>
+                </div>
+            </div>
+            <div class="purchase-layout">
+                <div class="catalog-list" aria-label="Prendas disponibles">
+                    <label class="catalog-item">
+                        <input class="product-checkbox" type="checkbox" value="29.90€" checked>
+                        <span class="product-name">Denim Elixir</span>
+                        <span class="product-price">29.90€</span>
+                    </label>
+                    <label class="catalog-item">
+                        <input class="product-checkbox" type="checkbox" value="19.99€" checked>
+                        <span class="product-name">Jordan Urban</span>
+                        <span class="product-price">19.99€</span>
+                    </label>
+                    <label class="catalog-item">
+                        <input class="product-checkbox" type="checkbox" value="59.99€" checked>
+                        <span class="product-name">Nike Tech Supreme</span>
+                        <span class="product-price">59.99€</span>
+                    </label>
+                    <div class="coupon-field">
+                        <label for="coupon">Cupón promocional (€)</label>
+                        <input id="coupon" name="coupon" type="text" inputmode="decimal" value="10" autocomplete="off">
+                    </div>
+                </div>
+                <div class="order-summary" aria-live="polite">
+                    <div class="summary-line"><span>Subtotal</span><strong id="subtotal">0,00 €</strong></div>
+                    <div class="summary-line"><span>Descuento</span><strong id="discount">−0,00 €</strong></div>
+                    <div class="summary-line"><span>IVA (21%)</span><strong id="vat">0,00 €</strong></div>
+                    <div class="summary-line summary-total"><span>Total a pagar</span><strong id="total">0,00 €</strong></div>
+                    <p class="order-number">Pedido actual: <strong id="order-id">1000</strong></p>
+                    <p class="form-error" id="purchase-error" role="alert" hidden></p>
+                    <button class="primary-button order-button" id="confirm-order" type="button">Confirmar pedido <span aria-hidden="true">&#8594;</span></button>
+                    <p class="order-confirmation" id="order-confirmation" role="status" hidden></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="flash-section" aria-labelledby="flash-heading">
+            <div>
+                <p class="eyebrow">POR TIEMPO LIMITADO</p>
+                <h2 id="flash-heading">Oferta Relámpago</h2>
+                <p>Un descuento exclusivo durante 15 segundos.</p>
+            </div>
+            <div class="flash-control">
+                <p class="flash-countdown" aria-live="polite"><span id="flash-countdown">15</span> s</p>
+                <button class="primary-button flash-button" id="flash-button" type="button">Activar Oferta Relámpago <span aria-hidden="true">&#8594;</span></button>
+                <p class="flash-status" id="flash-status" role="status">La oferta está lista.</p>
+            </div>
+        </section>
+
+        <section class="reviews-section" aria-labelledby="reviews-heading">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">LA COMUNIDAD OPINA</p>
+                    <h2 id="reviews-heading">Reseñas de prendas</h2>
+                </div>
+            </div>
+            <form class="review-form" id="review-form">
+                <label for="review-comment">Escribe tu opinión</label>
+                <textarea id="review-comment" name="comment" rows="4" maxlength="1000" required></textarea>
+                <button class="primary-button review-button" type="submit">Publicar reseña <span aria-hidden="true">&#8594;</span></button>
+                <p class="review-status" id="review-status" role="status" aria-live="polite"></p>
+            </form>
+            <ol class="review-list" id="review-list" aria-label="Reseñas publicadas"></ol>
+        </section>
+    </main>
+
+    <noscript><p class="noscript">Activa JavaScript para usar el portal.</p></noscript>
+</body>
+</html>
